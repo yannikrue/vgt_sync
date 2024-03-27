@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barren-Training</title>
+    <style>
+        /* Stile für das Layout */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .mode-selection {
+            margin-bottom: 20px;
+        }
+
+        .mode-selection button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .barren-display {
+            border: 2px solid #333;
+            padding: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Barren-Training</h1>
+        <div class="mode-selection">
+            <button onclick="selectMode('trainer')">Trainer-Modus</button>
+            <button onclick="selectMode('barren')">Barren-Modus</button>
+        </div>
+        <div class="barren-display">
+            <!-- Hier wird das UI für den Barren-Modus oder den Trainer-Modus angezeigt -->
+        </div>
+    </div>
+
+    <script>
+        function selectMode(mode) {
+            // Zeige das entsprechende UI basierend auf dem ausgewählten Modus
+            const barrenDisplay = document.querySelector('.barren-display');
+            barrenDisplay.innerHTML = ''; // Leere den Bereich, um ihn neu zu rendern
+            
+            if (mode === 'trainer') {
+                // UI für den Trainer-Modus
+                barrenDisplay.innerHTML = `
+                    <h2>Trainer-Modus</h2>
+                    <p>Hier kannst du die Musik steuern und die Übungen verwalten.</p>
+                    <!-- Füge hier die Steuerelemente für den Trainer-Modus hinzu -->
+                `;
+            } else if (mode === 'barren') {
+                // UI für den Barren-Modus
+                barrenDisplay.innerHTML = `
+                    <h2>Barren-Modus</h2>
+                    <p>Hier siehst du den aktuellen Takt und die nächsten Turner.</p>
+                    <!-- Füge hier die Anzeige für den Barren-Modus hinzu -->
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
